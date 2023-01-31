@@ -1,11 +1,11 @@
 {
-  "name": "start-frontend-project",
+  "name": "wp-start-theme",
   "version": "1.0.0",
   "author": "hadal3000",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/AlexHadaev/wp-start-theme"
   },
   "dependencies": {
     "browser-sync": "^2.27.11",
