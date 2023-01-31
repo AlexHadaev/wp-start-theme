@@ -20,7 +20,6 @@ After that, we use the available commands
 
 `gulp` - Launch a development project, proxy server, and watch files
 `gulp build` - style minification
-`gulp sprite` - assembly sprite
 
 ## Topic structure
 
