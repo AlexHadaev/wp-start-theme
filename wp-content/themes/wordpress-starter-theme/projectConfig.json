@@ -1,0 +1,7 @@
+{
+  "devDomain": "https://wordpress-starter-theme-master.loc",
+  "srcScripts": [
+    "./assets/scripts/main.js",
+    "./assets/scripts/functions.js"
+  ]
+}
