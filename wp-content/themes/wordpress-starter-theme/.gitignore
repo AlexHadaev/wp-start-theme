@@ -7,3 +7,5 @@ _arc/
 .idea
 .DS_Store
 .Saved/
+package-lock.json
+../twentytwentyfour/

@@ -1,1 +1,3 @@
-console.log('require test'); 
+(function ($) {
+  console.log('require test')
+})(jQuery)
