@@ -23,9 +23,13 @@ if ( ! function_exists( 'theme_setup' ) ) :
      */
     add_theme_support( 'post-thumbnails' );
 
-    // This theme uses wp_nav_menu() in one location.
+    // This theme uses wp_nav_menu() in the header and footer.
     register_nav_menus( array(
       'menu-1' => esc_html__( 'Primary', 'theme' ),
+      'footer-shop' => esc_html__( 'Footer: Shop', 'theme' ),
+      'footer-about' => esc_html__( 'Footer: About', 'theme' ),
+      'footer-support' => esc_html__( 'Footer: Support', 'theme' ),
+      'menu-footer' => esc_html__( 'Footer: Bottom links', 'theme' ),
     ) );
 
     /*

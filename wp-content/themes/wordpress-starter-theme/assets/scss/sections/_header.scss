@@ -1,9 +1,145 @@
 .main-header {
-  position: relative;
-  background-color: $main-header-bg;
-  &-container{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(47, 47, 47, 0.06);
+
+  &-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 82px;
+    gap: 26px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  min-width: 160px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    color: $text-color;
+    font-weight: 800;
+    letter-spacing: -0.07em;
+  }
+
+  img {
+    max-height: 42px;
+    width: auto;
+  }
+}
+
+.brand-wordmark {
+  font-size: 1.18rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: 'TMT Limkin', serif;
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 0.7rem;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      color: rgba(47, 47, 47, 0.8);
+      font-weight: 600;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-cta {
+  min-height: 42px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+.menu-button,
+.menu-button-close {
+  display: none;
+}
+
+@include max-w($media-md) {
+  .main-header-container {
+    position: relative;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(84vw, 320px);
+    height: 100vh;
+    padding: 82px 24px 24px;
+    background: #fff;
+    box-shadow: -18px 0 32px rgba(0, 0, 0, 0.08);
+    transition: right 0.25s ease;
+    z-index: 20;
+    justify-content: flex-start;
+
+    &.active {
+      right: 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      font-size: 0.8rem;
+    }
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .menu-button,
+  .menu-button-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(47, 47, 47, 0.12);
+    border-radius: 50%;
+    background: #fff;
+    color: #1f1f1f;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
 }

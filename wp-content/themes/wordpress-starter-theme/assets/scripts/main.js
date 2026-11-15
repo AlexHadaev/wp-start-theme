@@ -1,23 +1,33 @@
 (function($) {
-  /************************************
-  *** show mobile menu
-  ************************************/
-  $('#menu_button, #menu_button_close').click(function (e){
+  const $menu = $('nav.menu-mobile');
+  const $body = $('body');
+  const $menuButton = $('#menu_button');
+  const $menuClose = $('#menu_button_close');
+
+  function toggleMenu() {
+    $menu.toggleClass('active');
+    $body.toggleClass('overflow-hidden');
+  }
+
+  $menuButton.on('click', function(e) {
     e.preventDefault();
-    $('nav.menu-mobile').toggleClass('active');
-    $('body').toggleClass('overflow-hidden');
+    toggleMenu();
   });
 
-  $('body').click(function (e){
-    const eventTarget = $(e.target);
-    const checkMainNav = eventTarget.closest('.main-nav').length === 0;
-    const checkMenuButton = eventTarget.closest('.menu-button').length === 0;
-    const checkClassActive = $('nav.menu-mobile').hasClass('active');
-
-    if (checkMainNav && checkMenuButton && checkClassActive){
-      $('#menu_button').trigger('click');
+  $menuClose.on('click', function(e) {
+    e.preventDefault();
+    if ($menu.hasClass('active')) {
+      toggleMenu();
     }
   });
-  console.log('hello!');
 
+  $body.on('click', function(e) {
+    const target = $(e.target);
+    const isInsideMenu = target.closest('.main-nav').length > 0;
+    const isMenuButton = target.closest('.menu-button').length > 0;
+
+    if (!isInsideMenu && !isMenuButton && $menu.hasClass('active')) {
+      toggleMenu();
+    }
+  });
 })(jQuery);

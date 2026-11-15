@@ -1,33 +1,32 @@
-//  Color
+// Color
 
-$body-bg: #fff;
-$text-color: #333;
-$main-header-bg: lemonchiffon;
-$main-footer-bg: lemonchiffon;
-$main-menu-bg: lemonchiffon;
+$body-bg: #f5f4ee;
+$text-color: #2f2f2f;
+$main-header-bg: #ffffff;
+$main-footer-bg: #eae8df;
+$main-menu-bg: #ffffff;
+
 // Color link
 
-$link-color: #55b3f3;
-$link-color--hover: darken($link-color, 20%);
+$link-color: #2f2f2f;
+$link-color--hover: #171717;
 
-//  Typography
+// Typography
 
-$font-family: 'Roboto', Helvetica, Arial, sans-serif;
-// $font-family--helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$font-size: 14px;
-$font-weight: 400; // Regular
-$line-height: 1.2;
+$font-family: 'Figtree', 'Segoe UI', Helvetica, Arial, sans-serif;
+$font-size: 15px;
+$font-weight: 400;
+$line-height: 1.5;
 
 // Width container
 
-$container-padding: 15px;
-$container-width: 1170px + $container-padding * 2;
+$container-padding: 24px;
+$container-width: 1400px + $container-padding * 2;
 
-//  Media query
+// Media query
 
- $media-xs: 480;
- $media-sm: 768;
- $media-md: 992;
- $media-lg: 1200;
- $media-xl: 1440;
+$media-xs: 480;
+$media-sm: 768;
+$media-md: 992;
+$media-lg: 1200;
+$media-xl: 1440;

@@ -1,22 +1,24 @@
 {
-  "name": "wp-start-theme",
-  "version": "1.0.0",
-  "author": "hadal3000",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/AlexHadaev/wp-start-theme"
+  "name": "wp-starter-theme",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "watch": "gulp watch",
+    "build": "gulp styles && gulp scripts",
+    "start": "gulp"
   },
-  "dependencies": {
+  "devDependencies": {
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-cli": "^3.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.57.1"
+    "sass": "^1.77.0"
   }
 }

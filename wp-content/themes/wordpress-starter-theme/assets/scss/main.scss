@@ -1,4 +1,4 @@
-//  import files
+// import files
 
 @import 'variables';
 @import 'functions';
@@ -18,9 +18,10 @@
 @import 'sections/grid-posts';
 @import 'sections/post-item';
 @import 'sections/pagination';
+@import 'sections/landing';
 
 @import 'pages/home';
 @import 'pages/author';
-@import "pages/tag";
-@import "pages/search";
+@import 'pages/tag';
+@import 'pages/search';
 @import 'pages/404';
