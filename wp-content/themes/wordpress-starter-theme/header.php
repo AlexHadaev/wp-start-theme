@@ -10,10 +10,10 @@
         <!-- logo from customizer.php -->
         <div class="logo">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>"  rel="home" title="<?php bloginfo( 'name' ); ?>">
-                <?php if(get_option('custom_theme_options')['logo_image']): ?>
+                <?php if (isset(get_option('custom_theme_options')['logo_image'])): ?>
                     <img src="<?php echo get_option('custom_theme_options')['logo_image']; ?>" alt="">
                 <?php else : ?>
-                    <img src="<?php bloginfo('template_url' ); ?>/assets/images/logo-new.png" alt="">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/logo-new.png" alt="">
                 <?php endif; ?>
             </a>
         </div>
