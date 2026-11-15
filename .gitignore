@@ -28,4 +28,5 @@ wp-content/themes/index.php
 /readme.html
 /.htaccess
 
+/package-lock.json
 .idea
