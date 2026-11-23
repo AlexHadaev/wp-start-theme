@@ -1,4 +1,38 @@
-<?php get_header(); ?>
+<?php
+if ( is_home() && (int) get_option( 'page_for_posts' ) > 0 ) {
+    get_header();
+    ?>
+    <main id="main" class="page-main blog-main" role="main">
+        <div class="container">
+            <header class="inner-page-heading">
+                <p class="eyebrow">Journal</p>
+                <h1><?php echo esc_html( get_the_title( (int) get_option( 'page_for_posts' ) ) ?: __( 'Journal', 'theme' ) ); ?></h1>
+                <p class="inner-page-lead"><?php esc_html_e( 'Notes from the workshop and the rooms we live in.', 'theme' ); ?></p>
+            </header>
+
+            <?php if ( have_posts() ) : ?>
+                <div class="blog-grid">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php get_template_part( 'template-parts/content', 'blog' ); ?>
+                    <?php endwhile; ?>
+                </div>
+
+                <?php get_template_part( 'template-parts/paginate', '', array( 'container' => '', 'total' => $wp_query->max_num_pages ) ); ?>
+            <?php else : ?>
+                <div class="blog-empty-state">
+                    <h2><?php esc_html_e( 'Nothing on the journal just yet.', 'theme' ); ?></h2>
+                    <p><?php esc_html_e( 'Please check back soon for notes from the workshop.', 'theme' ); ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </main>
+    <?php
+    get_footer();
+    return;
+}
+
+get_header();
+?>
 
 <main id="main" class="page-main page-home" role="main">
     <section class="hero hero-home">
@@ -23,7 +57,7 @@
             <div class="hero__visual" aria-label="Featured product preview">
                 <div class="hero-card hero-card--featured">
                     <div class="hero-card__media">
-                        <img src="https://reposedemo.wpcomstaging.com/wp-content/themes/repose/assets/images/solene-03.webp" alt="Solene sofa in cream boucle in a bright living room">
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/solene-03.webp')); ?>" alt="Solene sofa in cream boucle in a bright living room">
                     </div>
                     <div class="hero-card__content">
                         <div>
@@ -79,16 +113,16 @@
 
             <div class="showcase__grid">
                 <article class="showcase-card showcase-card--large">
-                    <img src="https://reposedemo.wpcomstaging.com/wp-content/uploads/2026/08/solene-01-1.jpeg" alt="Solène sofa in cream bouclé">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/solene-01-1.jpg')); ?>" alt="Solène sofa in cream bouclé">
                     <div class="showcase-card__body">
-                        <p class="eyebrow muted">Best seller</p>
+                        <p class="eyebrow muted">Bestseller</p>
                         <h3>Solène sofa</h3>
                         <p>Low, deep and beautifully relaxed — with room for everyone and a silhouette that feels soft at the edges.</p>
                     </div>
                 </article>
 
                 <article class="showcase-card">
-                    <img src="https://reposedemo.wpcomstaging.com/wp-content/themes/repose/assets/images/marchetti-01.webp" alt="Marchetti two-seater sofa in charcoal fabric">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/marchetti-01.webp')); ?>" alt="Marchetti two-seater sofa in charcoal fabric">
                     <div class="showcase-card__body">
                         <p class="eyebrow muted">Compact comfort</p>
                         <h3>Marchetti</h3>
@@ -97,7 +131,7 @@
                 </article>
 
                 <article class="showcase-card">
-                    <img src="https://reposedemo.wpcomstaging.com/wp-content/themes/repose/assets/images/roundmodular-01.webp" alt="Round-edged modular sofa in cream boucle">
+                    <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/roundmodular-01.webp')); ?>" alt="Round-edged modular sofa in cream boucle">
                     <div class="showcase-card__body">
                         <p class="eyebrow muted">Modular</p>
                         <h3>Round modular</h3>
@@ -155,7 +189,7 @@
             <div class="post-block">
                 <article class="post-item item">
                     <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="modern living room interior" />
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/photo-1505693416388-ac5ce068fe85.avif')); ?>" alt="modern living room interior" />
                     </div>
                     <div class="item-text">
                         <h3 class="item-title"><a href="#">How to style a low sofa in a bright room</a></h3>
@@ -166,7 +200,7 @@
 
                 <article class="post-item item">
                     <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="neutral home interior" />
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/photo-1494526585095-c41746248156.avif')); ?>" alt="neutral home interior" />
                     </div>
                     <div class="item-text">
                         <h3 class="item-title"><a href="#">Why boucle works in real homes</a></h3>
@@ -177,7 +211,7 @@
 
                 <article class="post-item item">
                     <div class="item-img">
-                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="home styling inspiration" />
+                        <img src="<?php echo esc_url(get_theme_file_uri('assets/images/picture/photo-1484154218962-a197022b5858.avif')); ?>" alt="home styling inspiration" />
                     </div>
                     <div class="item-text">
                         <h3 class="item-title"><a href="#">Three ways to build a room around one statement chair</a></h3>

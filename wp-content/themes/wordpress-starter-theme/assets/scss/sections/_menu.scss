@@ -75,7 +75,7 @@
       top: 18px;
       z-index: 0;
       @include max-w($media-md){
-        display: inline-block;
+        display: inline-flex;
       }
     }
     &.active{

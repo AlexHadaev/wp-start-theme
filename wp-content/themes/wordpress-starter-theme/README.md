@@ -21,6 +21,13 @@ After that, we use the available commands
 `gulp` - Launch a development project, proxy server, and watch files
 `gulp build` - style minification
 
+## Contact, blog, and 404 pages
+
+- Create a **Contact Us** page and choose the **Contact Us** template in Page Attributes. The form sends messages to the site's WordPress admin email (`Settings > General`). Configure an SMTP plugin or mail service on the server if `wp_mail()` cannot deliver mail.
+- To use a page as the Posts page, create a page and select it under `Settings > Reading`. WordPress will use the theme's `home.php` archive and its main query for that page. Alternatively, assign the **Blog** template to a regular page to show a separate, paginated list of published posts.
+- The primary navigation automatically adds links to the published Posts page (or a page using the **Blog** template) and the published **Contact Us** page. Existing links to the same pages or URLs are not repeated. If a page is not published yet, the menu uses `/blog/` or `/contact-us/` as its default address.
+- WordPress displays the theme's `404.php` automatically for URLs that do not match a page or post; no page needs to be created for it.
+
 ## Topic structure
 
 ```
